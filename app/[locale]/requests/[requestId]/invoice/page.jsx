@@ -1,0 +1,2 @@
+import { getTranslations, setRequestLocale } from "next-intl/server"; import { AuthShell } from "../../../../../components/auth/auth-shell.jsx"; import { InvoiceView } from "../../../../../components/finance/invoice-view.jsx";
+export default async function InvoicePage({ params }) { const { locale, requestId } = await params; setRequestLocale(locale); const t = await getTranslations("Finance"); return <AuthShell locale={locale} title={t("invoiceTitle")} description={t("invoiceDescription")}><InvoiceView bookingId={requestId} /></AuthShell>; }

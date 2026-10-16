@@ -1,0 +1,2 @@
+import { getTranslations, setRequestLocale } from "next-intl/server"; import { AuthShell } from "../../../../components/auth/auth-shell.jsx"; import { BookingAdminPanel } from "../../../../components/bookings/booking-admin-panel.jsx";
+export default async function BookingOversightPage({ params }) { const { locale } = await params; setRequestLocale(locale); const t = await getTranslations("Booking"); return <AuthShell locale={locale} title={t("oversightTitle")} description={t("oversightDescription")}><BookingAdminPanel oversight /></AuthShell>; }

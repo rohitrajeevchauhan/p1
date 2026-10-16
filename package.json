@@ -1,0 +1,32 @@
+{
+  "name": "web",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "test": "vitest run",
+    "verify:a11y-pwa": "node test/accessibility-pwa-runtime.mjs",
+    "verify:performance": "node test/performance-budget.mjs",
+    "verify:demo": "node test/demo-runtime.mjs",
+    "verify:ui": "node test/ui-review-runtime.mjs"
+  },
+  "dependencies": {
+    "next": "^16.3.4",
+    "next-intl": "^4.14.2",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.13.0",
+    "@tailwindcss/postcss": "^4.1.14",
+    "eslint": "^9.39.5",
+    "eslint-config-next": "^16.3.4",
+    "playwright-core": "^1.63.0",
+    "tailwindcss": "^4.1.14",
+    "vitest": "^5.0.0"
+  }
+}

@@ -1,0 +1,2 @@
+import { getTranslations, setRequestLocale } from "next-intl/server"; import { AuthShell } from "../../../../components/auth/auth-shell.jsx"; import { WorkerBookingPanel } from "../../../../components/bookings/worker-booking-panel.jsx";
+export default async function WorkerJobsPage({ params }) { const { locale } = await params; setRequestLocale(locale); const t = await getTranslations("Booking"); return <AuthShell locale={locale} title={t("workerTitle")} description={t("workerDescription")}><WorkerBookingPanel /></AuthShell>; }
